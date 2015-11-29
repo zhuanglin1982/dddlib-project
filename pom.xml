@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.dayatang.dddlib</groupId>
     <artifactId>dddlib-project</artifactId>
@@ -652,7 +653,8 @@
                     <additionalparam>-outputencoding UTF-8</additionalparam>
                     <additionalparam>-nodefontsize 9</additionalparam>
                     <additionalparam>-nodefontpackagesize 7</additionalparam>
-                    <additionalparam>-link http://docs.oracle.com/javase/7/docs/jdk/api/javadoc/doclet/</additionalparam>
+                    <additionalparam>-link http://docs.oracle.com/javase/7/docs/jdk/api/javadoc/doclet/
+                    </additionalparam>
                     <additionalparam>-link http://download.oracle.com/javase/7/docs/api/</additionalparam>
                     <additionalparam>-Xdoclint:none</additionalparam>
                     <useStandardDocletOptions>true</useStandardDocletOptions>
@@ -751,7 +753,7 @@
                 <version>2.6</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <check />
+                    <check/>
                 </configuration>
             </plugin>
             <plugin>
@@ -778,113 +780,113 @@
                 <jdbc.driverClassName>org.h2.Driver</jdbc.driverClassName>
                 <jdbc.url><![CDATA[jdbc:h2:${basedir}/target/${db.name}]]></jdbc.url>
                 <jdbc.username>sa</jdbc.username>
-                <jdbc.password />
+                <jdbc.password/>
             </properties>
         </profile>
-        <profile>
-            <id>derby</id>
-            <properties>
-                <db.type>derby</db.type>
-                <hibernate.dialect>org.hibernate.dialect.DerbyTenSevenDialect</hibernate.dialect>
-                <jdbc.groupId>org.apache.derby</jdbc.groupId>
-                <jdbc.artifactId>derby</jdbc.artifactId>
-                <jdbc.version>10.10.2.0</jdbc.version>
-                <jdbc.driverClassName>org.apache.derby.jdbc.EmbeddedDriver</jdbc.driverClassName>
-                <jdbc.url><![CDATA[jdbc:derby:${basedir}/target/${db.name};create=true]]></jdbc.url>
-                <jdbc.username>any</jdbc.username>
-                <jdbc.password>value</jdbc.password>
-            </properties>
-        </profile>
-        <profile>
-            <id>hsqldb</id>
-            <properties>
-                <db.type>hsqldb</db.type>
-                <dbunit.dataTypeFactoryName>org.dbunit.ext.hsqldb.HsqldbDataTypeFactory</dbunit.dataTypeFactoryName>
-                <hibernate.dialect>org.hibernate.dialect.HSQLDialect</hibernate.dialect>
-                <jdbc.groupId>org.hsqldb</jdbc.groupId>
-                <jdbc.artifactId>hsqldb</jdbc.artifactId>
-                <jdbc.version>2.3.2</jdbc.version>
-                <jdbc.driverClassName>org.hsqldb.jdbcDriver</jdbc.driverClassName>
-                <jdbc.url><![CDATA[jdbc:hsqldb:${basedir}/target/${db.name};shutdown=true]]></jdbc.url>
-                <jdbc.username>sa</jdbc.username>
-                <jdbc.password />
-            </properties>
-        </profile>
-        <profile>
-            <id>oracle</id>
-            <properties>
-                <db.type>oracle</db.type>
-                <db.port>1521</db.port>
-                <db.instance>XE</db.instance>
-                <dbunit.dataTypeFactoryName>org.dbunit.ext.oracle.Oracle10DataTypeFactory</dbunit.dataTypeFactoryName>
-                <dbunit.schema>SYSTEM</dbunit.schema>
-                <!-- Make sure to capitalize the schema name -->
-                <hibernate.dialect>org.hibernate.dialect.Oracle10gDialect</hibernate.dialect>
-                <jdbc.groupId>com.oracle.jdbc</jdbc.groupId>
-                <jdbc.artifactId>ojdbc5</jdbc.artifactId>
-                <jdbc.version>${oracle.version}</jdbc.version>
-                <jdbc.driverClassName>oracle.jdbc.OracleDriver</jdbc.driverClassName>
-                <jdbc.url><![CDATA[jdbc:oracle:thin:@${db.host}:${db.port}:${db.instance}]]></jdbc.url>
-                <jdbc.username>system</jdbc.username>
-                <jdbc.password>system</jdbc.password>
-            </properties>
-        </profile>
-        <profile>
-            <id>db2</id>
-            <properties>
-                <db.type>db2</db.type>
-                <db.port>50000</db.port>
-                <dbunit.dataTypeFactoryName>org.dbunit.ext.db2.Db2DataTypeFactory</dbunit.dataTypeFactoryName>
-                <dbunit.schema />
-                <hibernate.dialect>org.hibernate.dialect.DB2Dialect</hibernate.dialect>
-                <jdbc.groupId>com.ibm</jdbc.groupId>
-                <jdbc.artifactId>db2jcc4</jdbc.artifactId>
-                <jdbc.version>4.7.112</jdbc.version>
-                <jdbc.serverName>localhost</jdbc.serverName>
-                <jdbc.serverPort>50000</jdbc.serverPort>
-                <jdbc.dbName>sample</jdbc.dbName>
-                <jdbc.driverClassName>com.ibm.db2.jcc.DB2Driver</jdbc.driverClassName>
-                <jdbc.url>jdbc:db2://${db.host}:${db.port}/${db.name}</jdbc.url>
-                <jdbc.username>db2admin</jdbc.username>
-                <jdbc.password>db2admin</jdbc.password>
-            </properties>
-        </profile>
-        <profile>
-            <id>postgresql</id>
-            <properties>
-                <db.type>postgresql</db.type>
-                <dbunit.dataTypeFactoryName>org.dbunit.ext.postgresql.PostgresqlDataTypeFactory
-                </dbunit.dataTypeFactoryName>
-                <hibernate.dialect>org.hibernate.dialect.PostgreSQL9Dialect</hibernate.dialect>
-                <jdbc.groupId>org.postgresql</jdbc.groupId>
-                <jdbc.artifactId>postgresql</jdbc.artifactId>
-                <jdbc.version>9.3-1102-jdbc4</jdbc.version>
-                <jdbc.driverClassName>org.postgresql.Driver</jdbc.driverClassName>
-                <jdbc.url><![CDATA[jdbc:postgresql://${db.host}/${db.name}]]></jdbc.url>
-                <jdbc.username>postgres</jdbc.username>
-                <jdbc.password>postgres</jdbc.password>
-            </properties>
-        </profile>
-        <profile>
+        <!--<profile>-->
+            <!--<id>derby</id>-->
+            <!--<properties>-->
+                <!--<db.type>derby</db.type>-->
+                <!--<hibernate.dialect>org.hibernate.dialect.DerbyTenSevenDialect</hibernate.dialect>-->
+                <!--<jdbc.groupId>org.apache.derby</jdbc.groupId>-->
+                <!--<jdbc.artifactId>derby</jdbc.artifactId>-->
+                <!--<jdbc.version>10.10.2.0</jdbc.version>-->
+                <!--<jdbc.driverClassName>org.apache.derby.jdbc.EmbeddedDriver</jdbc.driverClassName>-->
+                <!--<jdbc.url><![CDATA[jdbc:derby:${basedir}/target/${db.name};create=true]]></jdbc.url>-->
+                <!--<jdbc.username>any</jdbc.username>-->
+                <!--<jdbc.password>value</jdbc.password>-->
+            <!--</properties>-->
+        <!--</profile>-->
+        <!--<profile>-->
+            <!--<id>hsqldb</id>-->
+            <!--<properties>-->
+                <!--<db.type>hsqldb</db.type>-->
+                <!--<dbunit.dataTypeFactoryName>org.dbunit.ext.hsqldb.HsqldbDataTypeFactory</dbunit.dataTypeFactoryName>-->
+                <!--<hibernate.dialect>org.hibernate.dialect.HSQLDialect</hibernate.dialect>-->
+                <!--<jdbc.groupId>org.hsqldb</jdbc.groupId>-->
+                <!--<jdbc.artifactId>hsqldb</jdbc.artifactId>-->
+                <!--<jdbc.version>2.3.2</jdbc.version>-->
+                <!--<jdbc.driverClassName>org.hsqldb.jdbcDriver</jdbc.driverClassName>-->
+                <!--<jdbc.url><![CDATA[jdbc:hsqldb:${basedir}/target/${db.name};shutdown=true]]></jdbc.url>-->
+                <!--<jdbc.username>sa</jdbc.username>-->
+                <!--<jdbc.password/>-->
+            <!--</properties>-->
+        <!--</profile>-->
+        <!--<profile>-->
+            <!--<id>oracle</id>-->
+            <!--<properties>-->
+                <!--<db.type>oracle</db.type>-->
+                <!--<db.port>1521</db.port>-->
+                <!--<db.instance>XE</db.instance>-->
+                <!--<dbunit.dataTypeFactoryName>org.dbunit.ext.oracle.Oracle10DataTypeFactory</dbunit.dataTypeFactoryName>-->
+                <!--<dbunit.schema>SYSTEM</dbunit.schema>-->
+                <!--&lt;!&ndash; Make sure to capitalize the schema name &ndash;&gt;-->
+                <!--<hibernate.dialect>org.hibernate.dialect.Oracle10gDialect</hibernate.dialect>-->
+                <!--<jdbc.groupId>com.oracle.jdbc</jdbc.groupId>-->
+                <!--<jdbc.artifactId>ojdbc5</jdbc.artifactId>-->
+                <!--<jdbc.version>${oracle.version}</jdbc.version>-->
+                <!--<jdbc.driverClassName>oracle.jdbc.OracleDriver</jdbc.driverClassName>-->
+                <!--<jdbc.url><![CDATA[jdbc:oracle:thin:@${db.host}:${db.port}:${db.instance}]]></jdbc.url>-->
+                <!--<jdbc.username>system</jdbc.username>-->
+                <!--<jdbc.password>system</jdbc.password>-->
+            <!--</properties>-->
+        <!--</profile>-->
+        <!--<profile>-->
+            <!--<id>db2</id>-->
+            <!--<properties>-->
+                <!--<db.type>db2</db.type>-->
+                <!--<db.port>50000</db.port>-->
+                <!--<dbunit.dataTypeFactoryName>org.dbunit.ext.db2.Db2DataTypeFactory</dbunit.dataTypeFactoryName>-->
+                <!--<dbunit.schema/>-->
+                <!--<hibernate.dialect>org.hibernate.dialect.DB2Dialect</hibernate.dialect>-->
+                <!--<jdbc.groupId>com.ibm</jdbc.groupId>-->
+                <!--<jdbc.artifactId>db2jcc4</jdbc.artifactId>-->
+                <!--<jdbc.version>4.7.112</jdbc.version>-->
+                <!--<jdbc.serverName>localhost</jdbc.serverName>-->
+                <!--<jdbc.serverPort>50000</jdbc.serverPort>-->
+                <!--<jdbc.dbName>sample</jdbc.dbName>-->
+                <!--<jdbc.driverClassName>com.ibm.db2.jcc.DB2Driver</jdbc.driverClassName>-->
+                <!--<jdbc.url>jdbc:db2://${db.host}:${db.port}/${db.name}</jdbc.url>-->
+                <!--<jdbc.username>db2admin</jdbc.username>-->
+                <!--<jdbc.password>db2admin</jdbc.password>-->
+            <!--</properties>-->
+        <!--</profile>-->
+        <!--<profile>-->
+            <!--<id>postgresql</id>-->
+            <!--<properties>-->
+                <!--<db.type>postgresql</db.type>-->
+                <!--<dbunit.dataTypeFactoryName>org.dbunit.ext.postgresql.PostgresqlDataTypeFactory-->
+                <!--</dbunit.dataTypeFactoryName>-->
+                <!--<hibernate.dialect>org.hibernate.dialect.PostgreSQL9Dialect</hibernate.dialect>-->
+                <!--<jdbc.groupId>org.postgresql</jdbc.groupId>-->
+                <!--<jdbc.artifactId>postgresql</jdbc.artifactId>-->
+                <!--<jdbc.version>9.3-1102-jdbc4</jdbc.version>-->
+                <!--<jdbc.driverClassName>org.postgresql.Driver</jdbc.driverClassName>-->
+                <!--<jdbc.url><![CDATA[jdbc:postgresql://${db.host}/${db.name}]]></jdbc.url>-->
+                <!--<jdbc.username>postgres</jdbc.username>-->
+                <!--<jdbc.password>postgres</jdbc.password>-->
+            <!--</properties>-->
+        <!--</profile>-->
+        <!--<profile>-->
             <!-- You need to enable TCP/IP Connections for SQL Server 2005 after installing. -->
             <!-- http://www.mattwoodward.com/blog/index.cfm?commentID=211 -->
-            <id>sqlserver</id>
-            <properties>
-                <db.type>sqlserver</db.type>
-                <db.port>1433</db.port>
-                <dbunit.dataTypeFactoryName>org.dbunit.ext.mssql.MsSqlDataTypeFactory</dbunit.dataTypeFactoryName>
-                <dbunit.operation.type>MSSQL_CLEAN_INSERT</dbunit.operation.type>
-                <hibernate.dialect>org.hibernate.dialect.SQLServerDialect</hibernate.dialect>
-                <jdbc.groupId>com.microsoft.jdbc</jdbc.groupId>
-                <jdbc.artifactId>sqljdbc4</jdbc.artifactId>
-                <jdbc.version>4.0.2206.100</jdbc.version>
-                <jdbc.driverClassName>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc.driverClassName>
-                <jdbc.url><![CDATA[jdbc:sqlserver://${db.host}:${db.port}/${db.name}]]></jdbc.url>
-                <jdbc.url>jdbc:sqlserver://${db.host}:${db.port};databaseName=${db.name};</jdbc.url>
-                <jdbc.username>sa</jdbc.username>
-                <jdbc.password>appfuse</jdbc.password>
-            </properties>
-        </profile>
+            <!--<id>sqlserver</id>-->
+            <!--<properties>-->
+                <!--<db.type>sqlserver</db.type>-->
+                <!--<db.port>1433</db.port>-->
+                <!--<dbunit.dataTypeFactoryName>org.dbunit.ext.mssql.MsSqlDataTypeFactory</dbunit.dataTypeFactoryName>-->
+                <!--<dbunit.operation.type>MSSQL_CLEAN_INSERT</dbunit.operation.type>-->
+                <!--<hibernate.dialect>org.hibernate.dialect.SQLServerDialect</hibernate.dialect>-->
+                <!--<jdbc.groupId>com.microsoft.jdbc</jdbc.groupId>-->
+                <!--<jdbc.artifactId>sqljdbc4</jdbc.artifactId>-->
+                <!--<jdbc.version>4.0.2206.100</jdbc.version>-->
+                <!--<jdbc.driverClassName>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc.driverClassName>-->
+                <!--<jdbc.url><![CDATA[jdbc:sqlserver://${db.host}:${db.port}/${db.name}]]></jdbc.url>-->
+                <!--<jdbc.url>jdbc:sqlserver://${db.host}:${db.port};databaseName=${db.name};</jdbc.url>-->
+                <!--<jdbc.username>sa</jdbc.username>-->
+                <!--<jdbc.password>appfuse</jdbc.password>-->
+            <!--</properties>-->
+        <!--</profile>-->
         <profile>
             <id>mysql</id>
             <properties>
@@ -922,10 +924,10 @@
         <hibernate.version>4.3.8.Final</hibernate.version>
         <!-- Database settings, default to H2 database -->
         <h2.username>sa</h2.username>
-        <h2.password />
+        <h2.password/>
         <h2.version>1.4.185</h2.version>
         <mysql.username>root</mysql.username>
-        <mysql.password />
+        <mysql.password/>
         <mysql.host>localhost</mysql.host>
         <mysql.version>5.1.34</mysql.version>
         <derby.username>any</derby.username>
@@ -933,7 +935,7 @@
         <postgresql.username>postgres</postgresql.username>
         <postgresql.password>postgres</postgresql.password>
         <hsqldb.username>sa</hsqldb.username>
-        <hsqldb.password />
+        <hsqldb.password/>
         <oracle.username>system</oracle.username>
         <oracle.password>system</oracle.password>
         <oracle.version>11.2.0.3</oracle.version>
@@ -955,7 +957,7 @@
         <!--<jdbc.url><![CDATA[jdbc:h2:mem:testdb]]></jdbc.url>-->
         <jdbc.url><![CDATA[jdbc:h2:${basedir}/target/${db.name}]]></jdbc.url>
         <jdbc.username>sa</jdbc.username>
-        <jdbc.password />
+        <jdbc.password/>
         <hibernate.query.substitutions>true 'Y', false 'N'</hibernate.query.substitutions>
         <hibernate.cache.provider_class>org.hibernate.cache.EhCacheProvider</hibernate.cache.provider_class>
         <hibernate.cache.use_query_cache>true</hibernate.cache.use_query_cache>

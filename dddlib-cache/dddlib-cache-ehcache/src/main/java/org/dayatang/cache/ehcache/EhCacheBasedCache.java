@@ -20,7 +20,6 @@ public class EhCacheBasedCache implements Cache {
 
     /**
      * 使用指定的名字构建一个缓存，name对应ehcache.xml中的配置
-     *
      * @param name
      */
     public EhCacheBasedCache(String name) {
@@ -33,7 +32,6 @@ public class EhCacheBasedCache implements Cache {
 
     /**
      * 指定配置，构建一个缓存对象
-     *
      * @param configuration EhCache配置信息
      */
     public EhCacheBasedCache(EhCacheConfiguration configuration) {
@@ -51,7 +49,6 @@ public class EhCacheBasedCache implements Cache {
 
     /**
      * 指定详细的参数，构建一个缓存对象
-     *
      * @param name
      * @param maxElementsInMemory
      * @param overflowToDisk
@@ -95,7 +92,7 @@ public class EhCacheBasedCache implements Cache {
      * 判定一个KEY值是否在缓存中存在
      */
     public boolean containsKey(String key) {
-        return cache.isKeyInCache(key) && cache.get(key)!=null;
+        return cache.isKeyInCache(key) && cache.get(key) != null;
     }
 
     /**
@@ -108,7 +105,6 @@ public class EhCacheBasedCache implements Cache {
 
     /**
      * 向缓存中存入一个键值对，到指定的时间过期
-     *
      * @param key         指定对象的key
      * @param obj
      * @param expiredDate
@@ -122,7 +118,6 @@ public class EhCacheBasedCache implements Cache {
 
     /**
      * 向缓存中存入一个键值对，指定其生存的秒数
-     *
      * @param key               指定对象的key
      * @param obj
      * @param timeToLiveSeconds

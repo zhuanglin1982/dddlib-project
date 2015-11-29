@@ -6,13 +6,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import org.dayatang.utils.Assert;
 
 /**
  * 功能描述: 分页对象. 包含当前页数据及分页信息如总记录数.
- *
  * @author yshzhong
- *
  */
 public class Page<T> implements Serializable {
 
@@ -33,10 +30,9 @@ public class Page<T> implements Serializable {
 
     /**
      * 默认构造方法.
-     *
-     * @param start 本页数据在数据库中的起始位置
+     * @param start     本页数据在数据库中的起始位置
      * @param totalSize 数据库中总记录条数
-     * @param data 本页包含的数据
+     * @param data      本页包含的数据
      */
     public Page(long start, long totalSize, List<T> data) {
         Assert.isTrue(start >= 0, "Start must not be negative!");
@@ -59,11 +55,10 @@ public class Page<T> implements Serializable {
 
     /**
      * 默认构造方法.
-     *
-     * @param start 本页数据在数据库中的起始位置
+     * @param start     本页数据在数据库中的起始位置
      * @param totalSize 数据库中总记录条数
-     * @param pageSize 本页容量
-     * @param data 本页包含的数据
+     * @param pageSize  本页容量
+     * @param data      本页包含的数据
      */
     public Page(long start, long totalSize, int pageSize, List<T> data) {
         this(start, totalSize, data);
@@ -133,9 +128,8 @@ public class Page<T> implements Serializable {
 
     /**
      * 获取任一页第一条数据在数据集的位置.
-     *
      * @param pageIndex 从0开始的页号
-     * @param pageSize 每页的容量
+     * @param pageSize  每页的容量
      * @return 该页第一条数据在符合条件的查询结果中的位置。
      */
     public static int getStartOfPage(int pageIndex, int pageSize) {

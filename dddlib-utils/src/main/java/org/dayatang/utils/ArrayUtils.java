@@ -6,7 +6,6 @@ import java.util.Map;
 
 /**
  * 数组工具
- *
  * @author yyang (<a href="mailto:gdyangyu@gmail.com">gdyangyu@gmail.com</a>)
  */
 public class ArrayUtils {
@@ -16,7 +15,6 @@ public class ArrayUtils {
 
     /**
      * 抽取数组中每个元素的一个属性值形成新的数组。
-     *
      * @param items    原始数组
      * @param property 要抽取的数组元素属性
      * @return 由原始数组每个元素的一个指定属性的值组成的数组
@@ -41,7 +39,6 @@ public class ArrayUtils {
 
     /**
      * 抽取数组中每个元素的一个属性形成新的数组，然后用指定的分隔符连接起来形成一个字符串。
-     *
      * @param items     原始数组
      * @param property  要抽取的数组元素属性
      * @param separator 字符串分隔符
