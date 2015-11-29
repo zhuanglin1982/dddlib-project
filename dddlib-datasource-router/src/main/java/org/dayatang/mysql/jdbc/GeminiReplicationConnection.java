@@ -3,11 +3,11 @@ package org.dayatang.mysql.jdbc;
 import com.mysql.jdbc.LoadBalancedMySQLConnection;
 import com.mysql.jdbc.NonRegisteringDriver;
 import com.mysql.jdbc.ReplicationConnection;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
@@ -58,6 +58,61 @@ public class GeminiReplicationConnection extends ReplicationConnection {
 		this.currentConnection = this.masterConnection;
 	}
 
+	@Override
+	public Clob createClob() throws SQLException {
+		return null;
+	}
+
+	@Override
+	public Blob createBlob() throws SQLException {
+		return null;
+	}
+
+	@Override
+	public NClob createNClob() throws SQLException {
+		return null;
+	}
+
+	@Override
+	public SQLXML createSQLXML() throws SQLException {
+		return null;
+	}
+
+	@Override
+	public boolean isValid(int timeout) throws SQLException {
+		return false;
+	}
+
+	@Override
+	public void setClientInfo(String name, String value) throws SQLClientInfoException {
+
+	}
+
+	@Override
+	public void setClientInfo(Properties properties) throws SQLClientInfoException {
+
+	}
+
+	@Override
+	public String getClientInfo(String name) throws SQLException {
+		return null;
+	}
+
+	@Override
+	public Properties getClientInfo() throws SQLException {
+		return null;
+	}
+
+	@Override
+	public Array createArrayOf(String typeName, Object[] elements) throws SQLException {
+		return null;
+	}
+
+	@Override
+	public Struct createStruct(String typeName, Object[] attributes) throws SQLException {
+		return null;
+	}
+
 	//For JDK 7 compatability
 	public void setSchema(String schema) throws SQLException {
 	}
@@ -85,5 +140,15 @@ public class GeminiReplicationConnection extends ReplicationConnection {
 		if (LOGGER.isInfoEnabled()) {
 			LOGGER.info(message, params);
 		}
+	}
+
+	@Override
+	public <T> T unwrap(Class<T> iface) throws SQLException {
+		return null;
+	}
+
+	@Override
+	public boolean isWrapperFor(Class<?> iface) throws SQLException {
+		return false;
 	}
 }

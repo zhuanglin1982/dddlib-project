@@ -1,10 +1,10 @@
 package org.dayatang.datasource4saas.dscreator;
 
-import org.apache.commons.beanutils.BeanUtils;
 import org.dayatang.configuration.Configuration;
 import org.dayatang.configuration.ConfigurationFactory;
 import org.dayatang.datasource4saas.Constants;
 import org.dayatang.datasource4saas.dsregistry.DataSourceCreator;
+import org.springframework.beans.BeanUtils;
 
 import javax.sql.DataSource;
 import java.lang.reflect.InvocationTargetException;
@@ -122,12 +122,13 @@ public abstract class AbstractDataSourceCreator implements DataSourceCreator {
 	}
 
 	private void setProperty(Object obj, String propName, Object propValue) {
-		try {
-			BeanUtils.setProperty(obj, propName, propValue);
-		} catch (IllegalAccessException e) {
-			throw new DataSourceCreationException("Datasource property setting failed", e);
-		} catch (InvocationTargetException e) {
-			throw new DataSourceCreationException("Datasource property setting failed", e);
-		}
+//		try {
+			//错误注释代码
+//			BeanUtils.setProperty(obj, propName, propValue);
+//		} catch (IllegalAccessException e) {
+//			throw new DataSourceCreationException("Datasource property setting failed", e);
+//		} catch (InvocationTargetException e) {
+//			throw new DataSourceCreationException("Datasource property setting failed", e);
+//		}
 	}
 }

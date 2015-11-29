@@ -1,6 +1,6 @@
 package org.dayatang.dsrouter.datasource;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.dayatang.dsrouter.builder.DataSourceBuilder;
 import org.dayatang.dsrouter.builder.mysql.C3P0MySQLDataSourceBuilder;
 import org.dayatang.dsrouter.context.DataSourceContext;

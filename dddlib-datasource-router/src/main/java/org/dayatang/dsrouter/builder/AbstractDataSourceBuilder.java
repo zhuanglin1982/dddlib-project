@@ -1,6 +1,5 @@
 package org.dayatang.dsrouter.builder;
 
-import org.apache.commons.beanutils.BeanUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,10 +78,10 @@ public abstract class AbstractDataSourceBuilder implements DataSourceBuilder {
 		debug("正在为数据源【{}】组装基础属性driverClass=【{}】，jdbcUrl=【{}】，user=【{}】，password=【****】", new Object[] { getDataSourceClass(),
 				getDriverClass(url).getName(), getJdbcUrl(url), username });
 
-		BeanUtils.setProperty(dataSource, getDriverProperty(), getDriverClass(url).getName());
-		BeanUtils.setProperty(dataSource, getJdbcUrlProperty(), getJdbcUrl(url));
-		BeanUtils.setProperty(dataSource, getUserProperty(), username);
-		BeanUtils.setProperty(dataSource, getPasswordProperty(), password);
+//		BeanUtils.setProperty(dataSource, getDriverProperty(), getDriverClass(url).getName());
+//		BeanUtils.setProperty(dataSource, getJdbcUrlProperty(), getJdbcUrl(url));
+//		BeanUtils.setProperty(dataSource, getUserProperty(), username);
+//		BeanUtils.setProperty(dataSource, getPasswordProperty(), password);
 	}
 
 	private void assembleProps(DataSource dataSource, Properties properties) throws IllegalAccessException, InvocationTargetException {
@@ -91,7 +90,7 @@ public abstract class AbstractDataSourceBuilder implements DataSourceBuilder {
 		}
 		for (Map.Entry<Object, Object> each : properties.entrySet()) {
 			debug("正在为数据源【{}】组装可选属性【{}】=【{}】", new Object[] { dataSource, each.getKey(), each.getValue() });
-			BeanUtils.setProperty(dataSource, (String) each.getKey(), each.getValue());
+//			BeanUtils.setProperty(dataSource, (String) each.getKey(), each.getValue());
 		}
 	}
 

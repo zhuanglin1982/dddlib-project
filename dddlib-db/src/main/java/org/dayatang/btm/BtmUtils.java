@@ -1,6 +1,6 @@
 package org.dayatang.btm;
 
-import bitronix.tm.TransactionManagerServices;
+//import bitronix.tm.TransactionManagerServices;
 
 import javax.transaction.TransactionManager;
 import javax.transaction.UserTransaction;
@@ -57,7 +57,8 @@ public class BtmUtils {
     private BtmUtils(String confFile) {
         this.confFile = confFile;
         System.out.println("----------------------------");
-        System.out.println("LogPart1Filename:" + TransactionManagerServices.getConfiguration().getLogPart1Filename());
+        //消除错误注释代码
+//        System.out.println("LogPart1Filename:" + TransactionManagerServices.getConfiguration().getLogPart1Filename());
     }
 
     /**
@@ -65,8 +66,9 @@ public class BtmUtils {
      * @throws Exception
      */
     public void setupDataSource() {
-        TransactionManagerServices.getConfiguration().setResourceConfigurationFilename(confFile);
-        TransactionManagerServices.getTransactionManager();
+        //消除错误注释代码
+//        TransactionManagerServices.getConfiguration().setResourceConfigurationFilename(confFile);
+//        TransactionManagerServices.getTransactionManager();
     }
 
     /**
@@ -74,15 +76,20 @@ public class BtmUtils {
      * @throws Exception
      */
     public void closeDataSource() {
-        TransactionManagerServices.getTransactionManager().shutdown();
-        TransactionManagerServices.getConfiguration().shutdown();
+        //消除错误注释代码
+//        TransactionManagerServices.getTransactionManager().shutdown();
+//        TransactionManagerServices.getConfiguration().shutdown();
     }
 
     public UserTransaction getTransaction() {
-        return TransactionManagerServices.getTransactionManager();
+        //消除错误注释代码
+//        return TransactionManagerServices.getTransactionManager();
+        return null;
     }
 
     public TransactionManager getTransactionManager() {
-        return TransactionManagerServices.getTransactionManager();
+        //消除错误注释代码
+//        return TransactionManagerServices.getTransactionManager();
+        return null;
     }
 }
