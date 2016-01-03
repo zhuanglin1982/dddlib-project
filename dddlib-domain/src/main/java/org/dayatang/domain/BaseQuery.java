@@ -18,14 +18,16 @@ package org.dayatang.domain;
 
 import java.util.List;
 import java.util.Map;
+
 import org.dayatang.utils.Assert;
 
 /**
  * 查询基类，为NamedQuery、JpqlQuery和SqlQuery提供共同行为。
- * @author yyang
  * @param <E> 查询的类型
+ * @author yyang
  */
 public abstract class BaseQuery<E extends BaseQuery> {
+
     private final EntityRepository repository;
     private QueryParameters parameters = PositionalParameters.create();
     private final NamedParameters mapParameters = NamedParameters.create();
@@ -52,7 +54,7 @@ public abstract class BaseQuery<E extends BaseQuery> {
      */
     public E setParameters(Object... parameters) {
         this.parameters = PositionalParameters.create(parameters);
-        return (E)this;
+        return (E) this;
     }
 
     /**
@@ -77,7 +79,7 @@ public abstract class BaseQuery<E extends BaseQuery> {
 
     /**
      * 添加一个命名参数，Key是参数名称，Value是参数值。
-     * @param key 命名参数名称
+     * @param key   命名参数名称
      * @param value 参数值
      * @return 该对象本身
      */
@@ -166,7 +168,6 @@ public abstract class BaseQuery<E extends BaseQuery> {
     protected EntityRepository getRepository() {
         return repository;
     }
-    
-    
-    
+
+
 }

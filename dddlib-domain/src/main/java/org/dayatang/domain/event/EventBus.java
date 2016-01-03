@@ -6,6 +6,8 @@ package org.dayatang.domain.event;
  * 为唯一参数，且标记为@Subscribe的方法，当事件总线中有新的事件发布且匹配该方法的参数类型时，事件
  * 总线将以该事件对象为参数调用事件订阅者的订阅方法。
  * Created by yyang on 14-10-4.
+ * <p/>
+ * 包含发布、注册、解除注册三个时间订阅方法
  */
 public interface EventBus {
 

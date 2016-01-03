@@ -1,10 +1,5 @@
 package org.dayatang.persistence.hibernate;
 
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-
 import org.dayatang.domain.*;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
@@ -15,13 +10,16 @@ import org.hibernate.criterion.MatchMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+
 /**
  * 通用仓储接口的Hibernate实现。
  * <p> EntityRepositoryHibernate通过SessionProvider获取Session，以保证在当前线程和事务中
  * 对数据库的多次访问都是由同一个Session来进行，防止出现“会话已关闭”异常。
- *
  * @author yyang (<a href="mailto:gdyangyu@gmail.com">gdyangyu@gmail.com</a>)
- *
  */
 @SuppressWarnings({"unchecked"})
 public class EntityRepositoryHibernate implements EntityRepository {
@@ -41,8 +39,8 @@ public class EntityRepositoryHibernate implements EntityRepository {
     public EntityRepositoryHibernate(Session session) {
         this.sessionProvider = new SessionProvider(session);
     }
-    
-    
+
+
     /*
      * (non-Javadoc)
      * @see org.dayatang.domain.EntityRepository#save(org.dayatang.domain.Entity)
@@ -139,7 +137,7 @@ public class EntityRepositoryHibernate implements EntityRepository {
     @Override
     public <T> List<T> find(CriteriaQuery criteriaQuery) {
         Query query = getSession().createQuery(criteriaQuery.getQueryString());
-        processQuery(query, criteriaQuery.getParameters(), 
+        processQuery(query, criteriaQuery.getParameters(),
                 criteriaQuery.getFirstResult(), criteriaQuery.getMaxResults());
         return query.list();
     }
@@ -244,7 +242,7 @@ public class EntityRepositoryHibernate implements EntityRepository {
     }
 
     @SuppressWarnings("rawtypes")
-	@Override
+    @Override
     public <T> List<T> find(SqlQuery sqlQuery) {
         return getQuery(sqlQuery).list();
     }
@@ -318,7 +316,7 @@ public class EntityRepositoryHibernate implements EntityRepository {
 
     @Override
     public String getQueryStringOfNamedQuery(String queryName) {
-        Query query =  getSession().getNamedQuery(queryName);
+        Query query = getSession().getNamedQuery(queryName);
         return query.getQueryString();
     }
 
@@ -354,7 +352,7 @@ public class EntityRepositoryHibernate implements EntityRepository {
     }
 
     private void processQuery(Query query, BaseQuery originQuery) {
-        processQuery(query, originQuery.getParameters(), originQuery.getFirstResult(), 
+        processQuery(query, originQuery.getParameters(), originQuery.getFirstResult(),
                 originQuery.getMaxResults());
         fillParameters(query, originQuery.getParameters());
         query.setFirstResult(originQuery.getFirstResult());
@@ -363,8 +361,8 @@ public class EntityRepositoryHibernate implements EntityRepository {
         }
     }
 
-    private void processQuery(Query query, QueryParameters parameters, 
-            int firstResult, int maxResults) {
+    private void processQuery(Query query, QueryParameters parameters,
+                              int firstResult, int maxResults) {
         fillParameters(query, parameters);
         query.setFirstResult(firstResult);
         if (maxResults > 0) {

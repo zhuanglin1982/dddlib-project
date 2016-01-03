@@ -1,6 +1,5 @@
 package org.dayatang.ioc.guice;
 
-
 import com.google.inject.*;
 import com.google.inject.name.Names;
 import org.dayatang.domain.InstanceProvider;
@@ -9,7 +8,6 @@ import java.lang.annotation.Annotation;
 
 /**
  * 实例提供者接口的Google Guice实现。
- *
  * @author yyang (<a href="mailto:gdyangyu@gmail.com">gdyangyu@gmail.com</a>)
  */
 public class GuiceInstanceProvider implements InstanceProvider {
@@ -17,7 +15,6 @@ public class GuiceInstanceProvider implements InstanceProvider {
 
     /**
      * 以一批guice模块初始化guice实例提供者。
-     *
      * @param modules 一或多个guice模块
      */
     public GuiceInstanceProvider(Module... modules) {
@@ -26,7 +23,6 @@ public class GuiceInstanceProvider implements InstanceProvider {
 
     /**
      * 从Injector生成GuiceProvider
-     *
      * @param injector
      */
     public GuiceInstanceProvider(Injector injector) {
@@ -36,7 +32,7 @@ public class GuiceInstanceProvider implements InstanceProvider {
 
     /**
      * 根据类型获取对象实例。返回的对象实例所属的类是T或它的实现类或子类。如果找不到该类型的实例则返回null。
-     * @param <T> 类型参数
+     * @param <T>      类型参数
      * @param beanType 实例的类型
      * @return 指定类型的实例。
      */
@@ -57,8 +53,7 @@ public class GuiceInstanceProvider implements InstanceProvider {
      * binder.bind(Service.class).annotatedWith(Names.named("service2")).to(MyService2.class)
      * </pre>
      * 那么getInstance(Service.class, "service2")将返回MyService2的实例。
-     *
-     * @param <T> 类型参数
+     * @param <T>      类型参数
      * @param beanName 实现类在容器中配置的名字
      * @param beanType 实例的类型
      * @return 指定类型的实例。
@@ -81,9 +76,8 @@ public class GuiceInstanceProvider implements InstanceProvider {
      * binder.bind(Service.class).to(MyService1.class)
      * binder.bind(Service.class).annotatedWith(MyAnnotation.class).to(MyService2.class)
      * 那么getInstance(Service.class, MyAnnotation.class)将返回MyService2的实例。
-     *
-     * @param <T> 类型参数
-     * @param beanType 实例的类型
+     * @param <T>            类型参数
+     * @param beanType       实例的类型
      * @param annotationType 实现类的annotation类型
      * @return 指定类型的实例。
      */

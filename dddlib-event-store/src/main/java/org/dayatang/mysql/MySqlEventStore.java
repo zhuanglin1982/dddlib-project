@@ -11,6 +11,7 @@ import java.util.List;
  * Created by yyang on 14-9-16.
  */
 public class MySqlEventStore implements EventStore {
+
     @Override
     public List<StoredEvent> findStoredEventsBetween(Date occurredFrom, Date occurredTo) {
         return null;

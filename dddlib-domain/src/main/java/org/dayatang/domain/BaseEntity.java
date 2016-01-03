@@ -3,17 +3,17 @@
  */
 package org.dayatang.domain;
 
-import java.util.Map;
-import javax.persistence.*;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.dayatang.utils.BeanUtils;
 
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Transient;
+import java.util.Map;
+
 /**
  * 抽象实体类，可作为所有领域实体的基类。
- *
  * @author yang
- *
  */
 @MappedSuperclass
 public abstract class BaseEntity implements Entity {
@@ -30,7 +30,7 @@ public abstract class BaseEntity implements Entity {
         if (id == null) {
             return false;
         }
-        if (id instanceof Number && ((Number)id).intValue() == 0) {
+        if (id instanceof Number && ((Number) id).intValue() == 0) {
             return false;
         }
         return getRepository().exists(getClass(), getId());
@@ -65,7 +65,7 @@ public abstract class BaseEntity implements Entity {
     public static void setRepository(EntityRepository repository) {
         BaseEntity.repository = repository;
     }
-    
+
     /**
      * 获取业务主键。业务主键是判断相同类型的两个实体在业务上的等价性的依据。如果相同类型的两个
      * 实体的业务主键相同，则认为两个实体是相同的，代表同一个实体。
@@ -73,7 +73,7 @@ public abstract class BaseEntity implements Entity {
      * @return 组成业务主键的属性的数组。
      */
     public String[] businessKeys() {
-        return new String[] {};
+        return new String[]{};
     }
 
     /**
@@ -85,7 +85,7 @@ public abstract class BaseEntity implements Entity {
     public int hashCode() {
         HashCodeBuilder builder = new HashCodeBuilder(13, 37);
         Map<String, Object> propValues = new BeanUtils(this).getPropValues();
-        
+
         for (String businessKey : businessKeys()) {
             builder = builder.append(propValues.get(businessKey));
         }
@@ -95,7 +95,7 @@ public abstract class BaseEntity implements Entity {
     /**
      * 依据业务主键判断两个实体是否等价。
      * @param other 另一个实体
-     * @return 如果本实体和other等价则返回true,否则返回false
+     * @return 如果本实体和other等价则返回true, 否则返回false
      */
     @Override
     public boolean equals(Object other) {
