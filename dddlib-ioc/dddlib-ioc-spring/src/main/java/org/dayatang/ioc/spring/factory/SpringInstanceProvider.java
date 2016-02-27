@@ -16,7 +16,6 @@ import java.util.Map;
 /**
  * 实例提供者接口的Spring实现。
  * SpringProvider内部通过Spring IoC的ApplicationContext实现对象创建。
- *
  * @author yyang (<a href="mailto:gdyangyu@gmail.com">gdyangyu@gmail.com</a>)
  */
 public class SpringInstanceProvider implements InstanceProvider {
@@ -25,7 +24,6 @@ public class SpringInstanceProvider implements InstanceProvider {
 
     /**
      * 以一批spring配置文件的路径初始化spring实例提供者。
-     *
      * @param locations spring配置文件的路径的集合。spring将从类路径开始获取这批资源文件。
      */
     public SpringInstanceProvider(String... locations) {
@@ -34,7 +32,6 @@ public class SpringInstanceProvider implements InstanceProvider {
 
     /**
      * 从ApplicationContext生成SpringProvider
-     *
      * @param applicationContext
      */
     public SpringInstanceProvider(ApplicationContext applicationContext) {
@@ -43,7 +40,6 @@ public class SpringInstanceProvider implements InstanceProvider {
 
     /**
      * 根据一批Spring配置文件初始化spring实例提供者。
-     *
      * @param annotatedClasses
      */
     public SpringInstanceProvider(Class<?>... annotatedClasses) {
@@ -53,7 +49,6 @@ public class SpringInstanceProvider implements InstanceProvider {
     /**
      * 根据类型获取对象实例。返回的对象实例所属的类是T或它的实现类或子类。如果找不到该类型的实例则返回null。
      * 如果有部署了多个类型为T的Bean则抛出NoUniqueBeanDefinitionException异常。
-     *
      * @param <T>      类型参数
      * @param beanType 实例的类型
      * @return 指定类型的实例。
@@ -81,7 +76,6 @@ public class SpringInstanceProvider implements InstanceProvider {
      * 或者以配置类的方式部署：
      * <blockquote>
      * <pre>
-     *
      * @param <T>      类型参数
      * @param beanName 实现类在容器中配置的名字
      * @param beanType 实例的类型
@@ -119,7 +113,6 @@ public class SpringInstanceProvider implements InstanceProvider {
      * 假如有两个类MyService1和MyService2都实现了接口Service，其中MyService2标记为
      * TheAnnotation，那么getInstance(Service.class, TheAnnotation.class)将返回
      * MyService2的实例。
-     *
      * @param <T>            类型参数
      * @param beanType       实例的类型
      * @param annotationType 实现类的annotation类型

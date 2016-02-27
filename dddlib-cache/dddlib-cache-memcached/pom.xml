@@ -13,6 +13,11 @@
         高速缓存，用Memcached实现。
     </description>
 
+    <properties>
+        <maven.test.skip>true</maven.test.skip>
+        <memcached.version>2.6.3</memcached.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.dayatang.dddlib</groupId>
@@ -31,17 +36,17 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.danga</groupId>
-            <artifactId>java-memcached</artifactId>
-            <version>${memcached.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.danga</groupId>-->
+            <!--<artifactId>java-memcached</artifactId>-->
+            <!--<version>${memcached.version}</version>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.slf4j</groupId>-->
+                    <!--<artifactId>slf4j-simple</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>
@@ -71,8 +76,5 @@
         </plugins>
     </build>
 
-    <properties>
-        <maven.test.skip>true</maven.test.skip>
-        <memcached.version>2.6.3</memcached.version>
-    </properties>
+
 </project>

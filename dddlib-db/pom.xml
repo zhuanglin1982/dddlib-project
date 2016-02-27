@@ -51,12 +51,12 @@
             <optional>true</optional>
         </dependency>
 
-        <dependency>
-            <groupId>com.oracle.jdbc</groupId>
-            <artifactId>ojdbc5</artifactId>
-            <version>${oracle.version}</version>
-            <optional>true</optional>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.oracle.jdbc</groupId>-->
+            <!--<artifactId>ojdbc5</artifactId>-->
+            <!--<version>${oracle.version}</version>-->
+            <!--<optional>true</optional>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>

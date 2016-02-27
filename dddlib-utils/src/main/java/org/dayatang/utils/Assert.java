@@ -11,8 +11,8 @@ import java.util.Map;
 
 /**
  * @author chencao
- *
- * 2011-5-25
+ *         <p/>
+ *         2011-5-25
  */
 @SuppressWarnings("rawtypes")
 public class Assert {
@@ -24,13 +24,12 @@ public class Assert {
     /**
      * 断言表达式{@code expression}的值为真。如果表达式的值为假则抛出
      * <code>IllegalArgumentException</code>异常。
-     *
+     * <p/>
      * <pre class="code">
      * Assert.isTrue(i &gt; 0, &quot;The value must be greater than zero&quot;);
      * </pre>
-     *
      * @param expression 一个布尔表达式
-     * @param message 断言失败时呈现的异常消息
+     * @param message    断言失败时呈现的异常消息
      * @throws IllegalArgumentException 如果表达式的值是<code>false</code>
      */
     public static void isTrue(boolean expression, String message) {
@@ -42,11 +41,10 @@ public class Assert {
     /**
      * 断言表达式{@code expression}的值为真。如果表达式的值为假则抛出
      * <code>IllegalArgumentException</code>异常。
-     *
+     * <p/>
      * <pre class="code">
      * Assert.isTrue(i &gt; 0);
      * </pre>
-     *
      * @param expression 一个布尔表达式
      * @throws IllegalArgumentException 如果表达式的值是<code>false</code>
      */
@@ -57,13 +55,12 @@ public class Assert {
     /**
      * 断言表达式{@code expression}的值为假。如果表达式的值为真则抛出
      * <code>IllegalArgumentException</code>异常。
-     *
+     * <p/>
      * <pre class="code">
      * Assert.isFalse(i &gt; 0, &quot;The value must be smaller than zero&quot;);
      * </pre>
-     *
      * @param expression 一个布尔表达式
-     * @param message 断言失败时呈现的异常消息
+     * @param message    断言失败时呈现的异常消息
      * @throws IllegalArgumentException 如果表达式的值是<code>true</code>
      */
     public static void isFalse(boolean expression, String message) {
@@ -75,11 +72,10 @@ public class Assert {
     /**
      * 断言表达式{@code expression}的值为假。如果表达式的值为真则抛出
      * <code>IllegalArgumentException</code>异常。
-     *
+     * <p/>
      * <pre class="code">
      * Assert.isFalse(i &gt; 0);
      * </pre>
-     *
      * @param expression 一个布尔表达式
      * @throws IllegalArgumentException 如果表达式的值是<code>true</code>
      */
@@ -89,12 +85,11 @@ public class Assert {
 
     /**
      * Assert that an object is <code>null</code> .
-     *
+     * <p/>
      * <pre class="code">
      * Assert.isNull(value, &quot;The value must be null&quot;);
      * </pre>
-     *
-     * @param object the object to check
+     * @param object  the object to check
      * @param message the exception message to use if the assertion fails
      * @throws IllegalArgumentException if the object is not <code>null</code>
      */
@@ -106,11 +101,10 @@ public class Assert {
 
     /**
      * Assert that an object is <code>null</code> .
-     *
+     * <p/>
      * <pre class="code">
      * Assert.isNull(value);
      * </pre>
-     *
      * @param object the object to check
      * @throws IllegalArgumentException if the object is not <code>null</code>
      */
@@ -120,12 +114,11 @@ public class Assert {
 
     /**
      * Assert that an object is not <code>null</code> .
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notNull(clazz, &quot;The class must not be null&quot;);
      * </pre>
-     *
-     * @param object the object to check
+     * @param object  the object to check
      * @param message the exception message to use if the assertion fails
      * @throws IllegalArgumentException if the object is <code>null</code>
      */
@@ -137,11 +130,10 @@ public class Assert {
 
     /**
      * Assert that an object is not <code>null</code> .
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notNull(clazz);
      * </pre>
-     *
      * @param object the object to check
      * @throws IllegalArgumentException if the object is <code>null</code>
      */
@@ -152,8 +144,7 @@ public class Assert {
 
     /**
      * Assert that a character sequence is null or contains no character
-     *
-     * @param text the character sequence to be checked
+     * @param text    the character sequence to be checked
      * @param message the exception message to display when the assertion failed
      */
     public static void isEmpty(CharSequence text, String message) {
@@ -164,7 +155,6 @@ public class Assert {
 
     /**
      * Assert that a character sequence is null or contains no character
-     *
      * @param text the character sequence to be checked
      */
     public static void isEmpty(CharSequence text) {
@@ -173,8 +163,7 @@ public class Assert {
 
     /**
      * Assert that a character sequence contains one character at least.
-     *
-     * @param text the character sequence to be checked
+     * @param text    the character sequence to be checked
      * @param message the exception message to display when the assertion failed
      */
     public static void notEmpty(CharSequence text, String message) {
@@ -185,7 +174,6 @@ public class Assert {
 
     /**
      * Assert that a character sequence contains one character at least.
-     *
      * @param text the character sequence to be checked
      */
     public static void notEmpty(CharSequence text) {
@@ -194,12 +182,11 @@ public class Assert {
 
     /**
      * Assert that an array is <code>null</code> or has not elements.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.isEmpty(array, &quot;The array must have not elements&quot;);
      * </pre>
-     *
-     * @param array the array to check
+     * @param array   the array to check
      * @param message the exception message to use if the assertion fails
      * @throws IllegalArgumentException if the object array has any elements
      */
@@ -211,11 +198,10 @@ public class Assert {
 
     /**
      * Assert that an array is <code>null</code> or has not elements.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.isEmpty(array, &quot;The array must have not elements&quot;);
      * </pre>
-     *
      * @param array the array to check
      * @throws IllegalArgumentException if the object array has any elements
      */
@@ -225,15 +211,14 @@ public class Assert {
 
     /**
      * Assert that an array has at least one element.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notEmpty(array, &quot;The array must have elements&quot;);
      * </pre>
-     *
-     * @param array the array to check
+     * @param array   the array to check
      * @param message the exception message to use if the assertion fails
      * @throws IllegalArgumentException if the object array is <code>null</code>
-     * or has no elements
+     *                                  or has no elements
      */
     public static void notEmpty(Object[] array, String message) {
         if (array == null || array.length == 0) {
@@ -243,14 +228,13 @@ public class Assert {
 
     /**
      * Assert that an array has at least one element.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notEmpty(array);
      * </pre>
-     *
      * @param array the array to check
      * @throws IllegalArgumentException if the object array is <code>null</code>
-     * or has no elements
+     *                                  or has no elements
      */
     public static void notEmpty(Object[] array) {
         notEmpty(array, "[Assertion failed] - this array must not be empty: it must contain at least 1 element");
@@ -258,13 +242,12 @@ public class Assert {
 
     /**
      * Assert that a collection has no elements.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.isEmpty(collection, &quot;Collection must have elements&quot;);
      * </pre>
-     *
      * @param collection the collection to check
-     * @param message the exception message to use if the assertion fails
+     * @param message    the exception message to use if the assertion fails
      * @throws IllegalArgumentException if the collection has any elements
      */
     public static void isEmpty(Collection collection, String message) {
@@ -275,11 +258,10 @@ public class Assert {
 
     /**
      * Assert that a collection has no elements.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notEmpty(collection, &quot;Collection must have elements&quot;);
      * </pre>
-     *
      * @param collection the collection to check
      * @throws IllegalArgumentException if the collection has any elements
      */
@@ -289,15 +271,14 @@ public class Assert {
 
     /**
      * Assert that a collection has elements.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notEmpty(collection, &quot;Collection must have elements&quot;);
      * </pre>
-     *
      * @param collection the collection to check
-     * @param message the exception message to use if the assertion fails
+     * @param message    the exception message to use if the assertion fails
      * @throws IllegalArgumentException if the collection is <code>null</code>
-     * or has no elements
+     *                                  or has no elements
      */
     public static void notEmpty(Collection collection, String message) {
         if (collection == null || collection.isEmpty()) {
@@ -307,14 +288,13 @@ public class Assert {
 
     /**
      * Assert that a collection has elements.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notEmpty(collection, &quot;Collection must have elements&quot;);
      * </pre>
-     *
      * @param collection the collection to check
      * @throws IllegalArgumentException if the collection is <code>null</code>
-     * or has no elements
+     *                                  or has no elements
      */
     public static void notEmpty(Collection collection) {
         notEmpty(collection, "[Assertion failed] - this collection must contain at least 1 element");
@@ -322,12 +302,11 @@ public class Assert {
 
     /**
      * Assert that a map must have no entries.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.isEmpty(map, &quot;Map must have no elements&quot;);
      * </pre>
-     *
-     * @param map the map to check
+     * @param map     the map to check
      * @param message the exception message to use if the assertion fails
      * @throws IllegalArgumentException if the map has any entries
      */
@@ -339,11 +318,10 @@ public class Assert {
 
     /**
      * Assert that a map must have no entries.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notEmpty(map, &quot;Map must have no elements&quot;);
      * </pre>
-     *
      * @param map the map to check
      * @throws IllegalArgumentException if the map has any entries
      */
@@ -353,15 +331,14 @@ public class Assert {
 
     /**
      * Assert that a Map has entries.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notEmpty(map, &quot;Map must have entries&quot;);
      * </pre>
-     *
-     * @param map the map to check
+     * @param map     the map to check
      * @param message the exception message to use if the assertion fails
      * @throws IllegalArgumentException if the map is <code>null</code> or has
-     * no entries
+     *                                  no entries
      */
     public static void notEmpty(Map map, String message) {
         if (map == null || map.isEmpty()) {
@@ -371,14 +348,13 @@ public class Assert {
 
     /**
      * Assert that a Map has entries.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notEmpty(map);
      * </pre>
-     *
      * @param map the map to check
      * @throws IllegalArgumentException if the map is <code>null</code> or has
-     * no entries
+     *                                  no entries
      */
     public static void notEmpty(Map map) {
         notEmpty(map, "[Assertion failed] - this map must have at least one entry");
@@ -387,8 +363,7 @@ public class Assert {
     /**
      * 断言字符串为<code>null</code>、空字符串或者只包含空白字符串（空格、回车、换行、tab等字符） Assert that a
      * character sequence is null, empty or contains blank characters only.
-     *
-     * @param text the character sequence to be checked
+     * @param text    the character sequence to be checked
      * @param message the exception message to display when the assertion failed
      */
     public static void isBlank(CharSequence text, String message) {
@@ -400,7 +375,6 @@ public class Assert {
     /**
      * 断言字符串为<code>null</code>、空字符串或者只包含空白字符串（空格、回车、换行、tab等字符） Assert that a
      * character sequence is null, empty or contains blank characters only.
-     *
      * @param text the character sequence to be checked
      */
     public static void isBlank(CharSequence text) {
@@ -410,8 +384,7 @@ public class Assert {
     /**
      * 断言字符串text至少包含一个非空白字符串（空格、回车、换行、tab等空白字符之外的字符） Assert that a character
      * sequence must have at least one not blank character.
-     *
-     * @param text the character sequence to be checked
+     * @param text    the character sequence to be checked
      * @param message the exception message to display when the assertion failed
      */
     public static void notBlank(CharSequence text, String message) {
@@ -423,7 +396,6 @@ public class Assert {
     /**
      * 断言字符串text至少包含一个非空白字符串（空格、回车、换行、tab等空白字符之外的字符） Assert that a character
      * sequence must have at least one not blank character.
-     *
      * @param text the character sequence to be checked
      */
     public static void notBlank(CharSequence text) {
@@ -432,18 +404,17 @@ public class Assert {
 
     /**
      * Assert that the given text contains the given substring.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.containsText(name, &quot;rod&quot;, &quot;Name must contains
      * 'rod'&quot;);
      * </pre>
-     *
      * @param textToSearch the text to search
-     * @param substring the substring to find within the text
-     * @param message the exception message to use if the assertion fails
+     * @param substring    the substring to find within the text
+     * @param message      the exception message to use if the assertion fails
      */
     public static void containsText(String textToSearch, String substring,
-            String message) {
+                                    String message) {
         if (!StringUtils.isEmpty(textToSearch)
                 && !StringUtils.isEmpty(substring)
                 && textToSearch.indexOf(substring) == -1) {
@@ -453,34 +424,32 @@ public class Assert {
 
     /**
      * Assert that the given text contains the given substring.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.containsText(name, &quot;rod&quot;);
      * </pre>
-     *
      * @param textToSearch the text to search
-     * @param substring the substring to find within the text
+     * @param substring    the substring to find within the text
      */
     public static void containsText(String textToSearch, String substring) {
         containsText(textToSearch, substring,
                 "[Assertion failed] - this String argument must contain the substring ["
-                + substring + "]");
+                        + substring + "]");
     }
 
     /**
      * Assert that the given text does not contain the given substring.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notContainsText(name, &quot;rod&quot;, &quot;Name must not contain
      * 'rod'&quot;);
      * </pre>
-     *
      * @param textToSearch the text to search
-     * @param substring the substring to find within the text
-     * @param message the exception message to use if the assertion fails
+     * @param substring    the substring to find within the text
+     * @param message      the exception message to use if the assertion fails
      */
     public static void notContainsText(String textToSearch, String substring,
-            String message) {
+                                       String message) {
         if (!StringUtils.isEmpty(textToSearch)
                 && !StringUtils.isEmpty(substring)
                 && textToSearch.indexOf(substring) != -1) {
@@ -490,34 +459,32 @@ public class Assert {
 
     /**
      * Assert that the given text does not contain the given substring.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notContainsText(name, &quot;rod&quot;);
      * </pre>
-     *
      * @param textToSearch the text to search
-     * @param substring the substring to find within the text
+     * @param substring    the substring to find within the text
      */
     public static void notContainsText(String textToSearch, String substring) {
         notContainsText(textToSearch, substring,
                 "[Assertion failed] - this String argument must not contain the substring ["
-                + substring + "]");
+                        + substring + "]");
     }
 
     /**
      * Assert that the given text starts with given substring.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.startsWithText(name, &quot;rod&quot;, &quot;Name must starts with
      * 'rod'&quot;);
      * </pre>
-     *
      * @param textToSearch the text to search
-     * @param substring the substring
-     * @param message the exception message to use if the assertion fails
+     * @param substring    the substring
+     * @param message      the exception message to use if the assertion fails
      */
     public static void startsWithText(String textToSearch, String substring,
-            String message) {
+                                      String message) {
         if (!StringUtils.isEmpty(textToSearch)
                 && !StringUtils.isEmpty(substring)
                 && !textToSearch.startsWith(substring)) {
@@ -527,34 +494,32 @@ public class Assert {
 
     /**
      * Assert that the given text starts with given substring.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.startsWithText(name, &quot;rod&quot;);
      * </pre>
-     *
      * @param textToSearch the text to search
-     * @param substring the substring
+     * @param substring    the substring
      */
     public static void startsWithText(String textToSearch, String substring) {
         startsWithText(textToSearch, substring,
                 "[Assertion failed] - this String argument must start with the substring ["
-                + substring + "]");
+                        + substring + "]");
     }
 
     /**
      * Assert that the given text not starts with the given substring.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notStartsWithText(name, &quot;rod&quot;, &quot;Name must not
      * starts with 'rod'&quot;);
      * </pre>
-     *
      * @param textToSearch the text to search
-     * @param substring the substring
-     * @param message the exception message to use if the assertion fails
+     * @param substring    the substring
+     * @param message      the exception message to use if the assertion fails
      */
     public static void notStartsWithText(String textToSearch, String substring,
-            String message) {
+                                         String message) {
         if (!StringUtils.isEmpty(textToSearch)
                 && !StringUtils.isEmpty(substring)
                 && textToSearch.startsWith(substring)) {
@@ -564,34 +529,32 @@ public class Assert {
 
     /**
      * Assert that the given text not starts with the given substring.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notStartsWithText(name, &quot;rod&quot;);
      * </pre>
-     *
      * @param textToSearch the text to search
-     * @param substring the substring to find
+     * @param substring    the substring to find
      */
     public static void notStartsWithText(String textToSearch, String substring) {
         notStartsWithText(textToSearch, substring,
                 "[Assertion failed] - this String argument must not start with the substring ["
-                + substring + "]");
+                        + substring + "]");
     }
 
     /**
      * Assert that the given text ends with given substring.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.endsWithText(name, &quot;rod&quot;, &quot;Name must end with
      * 'rod'&quot;);
      * </pre>
-     *
      * @param textToSearch the text to search
-     * @param substring the substring
-     * @param message the exception message to use if the assertion fails
+     * @param substring    the substring
+     * @param message      the exception message to use if the assertion fails
      */
     public static void endsWithText(String textToSearch, String substring,
-            String message) {
+                                    String message) {
         if (!StringUtils.isEmpty(textToSearch)
                 && !StringUtils.isEmpty(substring)
                 && !textToSearch.endsWith(substring)) {
@@ -601,34 +564,32 @@ public class Assert {
 
     /**
      * Assert that the given text ends with given substring.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.endsWithText(name, &quot;rod&quot;);
      * </pre>
-     *
      * @param textToSearch the text to search
-     * @param substring the substring
+     * @param substring    the substring
      */
     public static void endsWithText(String textToSearch, String substring) {
         endsWithText(textToSearch, substring,
                 "[Assertion failed] - this String argument must end with the substring ["
-                + substring + "]");
+                        + substring + "]");
     }
 
     /**
      * Assert that the given text must not end with the given substring.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notEndsWithText(name, &quot;rod&quot;, &quot;Name must not end
      * with 'rod'&quot;);
      * </pre>
-     *
      * @param textToSearch the text to search
-     * @param substring the substring
-     * @param message the exception message to use if the assertion fails
+     * @param substring    the substring
+     * @param message      the exception message to use if the assertion fails
      */
     public static void notEndsWithText(String textToSearch, String substring,
-            String message) {
+                                       String message) {
         if (!StringUtils.isEmpty(textToSearch)
                 && !StringUtils.isEmpty(substring)
                 && textToSearch.endsWith(substring)) {
@@ -638,33 +599,31 @@ public class Assert {
 
     /**
      * Assert that the given text not end with the given substring.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.notEndsWithText(name, &quot;rod&quot;);
      * </pre>
-     *
      * @param textToSearch the text to search
-     * @param substring the substring to find
+     * @param substring    the substring to find
      */
     public static void notEndsWithText(String textToSearch, String substring) {
         notEndsWithText(textToSearch, substring,
                 "[Assertion failed] - this String argument must not end with the substring ["
-                + substring + "]");
+                        + substring + "]");
     }
 
     /**
      * Assert that an array has no null elements. Note: Does not complain if the
      * array is empty!
-     *
+     * <p/>
      * <pre class="code">
      * Assert.noNullElements(array, &quot;The array must have non-null
      * elements&quot;);
      * </pre>
-     *
-     * @param array the array to check
+     * @param array   the array to check
      * @param message the exception message to use if the assertion fails
      * @throws IllegalArgumentException if the object array contains a
-     * <code>null</code> element
+     *                                  <code>null</code> element
      */
     public static void noNullElements(Object[] array, String message) {
         if (array == null) {
@@ -678,14 +637,13 @@ public class Assert {
     /**
      * Assert that an array has no null elements. Note: Does not complain if the
      * array is empty!
-     *
+     * <p/>
      * <pre class="code">
      * Assert.noNullElements(array);
      * </pre>
-     *
      * @param array the array to check
      * @throws IllegalArgumentException if the object array contains a
-     * <code>null</code> element
+     *                                  <code>null</code> element
      */
     public static void noNullElements(Object[] array) {
         noNullElements(array,
@@ -696,16 +654,15 @@ public class Assert {
     /**
      * Assert that an collection has no null elements. Note: Does not complain if the
      * collection is empty!
-     *
+     * <p/>
      * <pre class="code">
      * Assert.noNullElements(collection, &quot;The collection must have non-null
      * elements&quot;);
      * </pre>
-     *
      * @param collection the collection to check
-     * @param message the exception message to use if the assertion fails
+     * @param message    the exception message to use if the assertion fails
      * @throws IllegalArgumentException if the object array contains a
-     * <code>null</code> element
+     *                                  <code>null</code> element
      */
     public static void noNullElements(Collection collection, String message) {
         if (collection == null) {
@@ -719,14 +676,13 @@ public class Assert {
     /**
      * Assert that an collection has no null elements. Note: Does not complain if the
      * collection is empty!
-     *
+     * <p/>
      * <pre class="code">
      * Assert.noNullElements(collection);
      * </pre>
-     *
      * @param collection the collection to check
      * @throws IllegalArgumentException if the object collection contains a
-     * <code>null</code> element
+     *                                  <code>null</code> element
      */
     public static void noNullElements(Collection collection) {
         noNullElements(collection,
@@ -736,16 +692,15 @@ public class Assert {
     /**
      * Assert that an map has no null elements. Note: Does not complain if the
      * map is empty!
-     *
+     * <p/>
      * <pre class="code">
      * Assert.noNullElements(map, &quot;The map must have non-null
      * elements&quot;);
      * </pre>
-     *
-     * @param map the map to check
+     * @param map     the map to check
      * @param message the exception message to use if the assertion fails
      * @throws IllegalArgumentException if the object array contains a
-     * <code>null</code> element
+     *                                  <code>null</code> element
      */
     public static void noNullElements(Map map, String message) {
         if (map == null) {
@@ -759,14 +714,13 @@ public class Assert {
     /**
      * Assert that an map has no null elements. Note: Does not complain if the
      * map is empty!
-     *
+     * <p/>
      * <pre class="code">
      * Assert.noNullElements(map);
      * </pre>
-     *
      * @param map the map to check
      * @throws IllegalArgumentException if the object map contains a
-     * <code>null</code> element
+     *                                  <code>null</code> element
      */
     public static void noNullElements(Map map) {
         noNullElements(map,
@@ -775,20 +729,19 @@ public class Assert {
 
     /**
      * Assert that the provided object is an instance of the provided class.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.isInstanceOf(Foo.class, foo, &quot;The object must be instance of
      * the type&quot;);
      * </pre>
-     *
-     * @param type the type to check against
-     * @param obj the object to check
+     * @param type    the type to check against
+     * @param obj     the object to check
      * @param message a message which will be prepended to the message produced
-     * by the function itself, and which may be used to provide context. It
-     * should normally end in a ": " or ". " so that the function generate
-     * message looks ok when prepended to it.
+     *                by the function itself, and which may be used to provide context. It
+     *                should normally end in a ": " or ". " so that the function generate
+     *                message looks ok when prepended to it.
      * @throws IllegalArgumentException if the object is not an instance of
-     * clazz
+     *                                  clazz
      * @see Class#isInstance
      */
     public static void isInstanceOf(Class type, Object obj, String message) {
@@ -800,15 +753,14 @@ public class Assert {
 
     /**
      * Assert that the provided object is an instance of the provided class.
-     *
+     * <p/>
      * <pre class="code">
      * Assert.isInstanceOf(Foo.class, foo);
      * </pre>
-     *
      * @param type the required class
-     * @param obj the object to check
+     * @param obj  the object to check
      * @throws IllegalArgumentException if the object is not an instance of
-     * clazz
+     *                                  clazz
      * @see Class#isInstance
      */
     public static void isInstanceOf(Class type, Object obj) {
@@ -820,23 +772,22 @@ public class Assert {
     /**
      * Assert that <code>superType.isAssignableFrom(subType)</code> is
      * <code>true</code>.
-     *
+     * <p/>
      * <pre class="code">
- Assert.isAssignableFrom(Number.class, myClass, &quot;The subType must be
+     * Assert.isAssignableFrom(Number.class, myClass, &quot;The subType must be
      * instance of the superType&quot;);
      * </pre>
-     *
      * @param superType the super type to check against
-     * @param subType the sub type to check
-     * @param message a message which will be prepended to the message produced
-     * by the function itself, and which may be used to provide context. It
-     * should normally end in a ": " or ". " so that the function generate
-     * message looks ok when prepended to it.
+     * @param subType   the sub type to check
+     * @param message   a message which will be prepended to the message produced
+     *                  by the function itself, and which may be used to provide context. It
+     *                  should normally end in a ": " or ". " so that the function generate
+     *                  message looks ok when prepended to it.
      * @throws IllegalArgumentException if the classes are not assignable
      */
     @SuppressWarnings("unchecked")
     public static void isAssignableFrom(Class superType, Class subType,
-            String message) {
+                                        String message) {
         notNull(superType, "Type to check against must not be null");
         if (subType == null || !superType.isAssignableFrom(subType)) {
             throw new IllegalArgumentException(message);
@@ -846,13 +797,12 @@ public class Assert {
     /**
      * Assert that <code>superType.isAssignableFrom(subType)</code> is
      * <code>true</code>.
-     *
+     * <p/>
      * <pre class="code">
- Assert.isAssignableFrom(Number.class, myClass);
- </pre>
-     *
+     * Assert.isAssignableFrom(Number.class, myClass);
+     * </pre>
      * @param superType the super type to check
-     * @param subType the sub type to check
+     * @param subType   the sub type to check
      * @throws IllegalArgumentException if the classes are not assignable
      */
     public static void isAssignableFrom(Class superType, Class subType) {

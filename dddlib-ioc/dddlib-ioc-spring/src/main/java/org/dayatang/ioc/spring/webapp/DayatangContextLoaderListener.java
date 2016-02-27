@@ -14,17 +14,17 @@ import javax.servlet.ServletContextEvent;
  */
 public class DayatangContextLoaderListener extends ContextLoaderListener {
 
-        @Override
-	public void contextInitialized(ServletContextEvent event) {
-		super.contextInitialized(event);
-		WebApplicationContext applicationContext = WebApplicationContextUtils.getRequiredWebApplicationContext(event.getServletContext());
-		SpringInstanceProvider springProvider = new SpringInstanceProvider(applicationContext);
-		InstanceFactory.setInstanceProvider(springProvider);
-	}
+    @Override
+    public void contextInitialized(ServletContextEvent event) {
+        super.contextInitialized(event);
+        WebApplicationContext applicationContext = WebApplicationContextUtils.getRequiredWebApplicationContext(event.getServletContext());
+        SpringInstanceProvider springProvider = new SpringInstanceProvider(applicationContext);
+        InstanceFactory.setInstanceProvider(springProvider);
+    }
 
-	@Override
-	public void contextDestroyed(ServletContextEvent event) {
-		InstanceFactory.setInstanceProvider(null);
-		super.contextDestroyed(event);
-	}
+    @Override
+    public void contextDestroyed(ServletContextEvent event) {
+        InstanceFactory.setInstanceProvider(null);
+        super.contextDestroyed(event);
+    }
 }

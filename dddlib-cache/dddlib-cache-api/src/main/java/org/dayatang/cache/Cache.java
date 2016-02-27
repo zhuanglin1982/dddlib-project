@@ -7,10 +7,6 @@ import java.util.Map;
  * 缓存接口
  * @author chencao
  */
-
-/**
- * @author chencao
- */
 public interface Cache {
     /**
      * 根据指定key，从缓存中获取对象

@@ -759,25 +759,25 @@
                 <jdbc.password />
             </properties>
         </profile>
-        <profile>
-            <id>oracle</id>
-            <properties>
-                <db.type>oracle</db.type>
-                <db.port>1521</db.port>
-                <db.instance>XE</db.instance>
-                <dbunit.dataTypeFactoryName>org.dbunit.ext.oracle.Oracle10DataTypeFactory</dbunit.dataTypeFactoryName>
-                <dbunit.schema>SYSTEM</dbunit.schema>
-                <!-- Make sure to capitalize the schema name -->
-                <hibernate.dialect>org.hibernate.dialect.Oracle9iDialect</hibernate.dialect>
-                <jdbc.groupId>com.oracle.jdbc</jdbc.groupId>
-                <jdbc.artifactId>ojdbc5</jdbc.artifactId>
-                <jdbc.version>${oracle.version}</jdbc.version>
-                <jdbc.driverClassName>oracle.jdbc.OracleDriver</jdbc.driverClassName>
-                <jdbc.url><![CDATA[jdbc:oracle:thin:@${db.host}:${db.port}:${db.instance}]]></jdbc.url>
-                <jdbc.username>system</jdbc.username>
-                <jdbc.password>system</jdbc.password>
-            </properties>
-        </profile>
+        <!--<profile>-->
+            <!--<id>oracle</id>-->
+            <!--<properties>-->
+                <!--<db.type>oracle</db.type>-->
+                <!--<db.port>1521</db.port>-->
+                <!--<db.instance>XE</db.instance>-->
+                <!--<dbunit.dataTypeFactoryName>org.dbunit.ext.oracle.Oracle10DataTypeFactory</dbunit.dataTypeFactoryName>-->
+                <!--<dbunit.schema>SYSTEM</dbunit.schema>-->
+                <!--&lt;!&ndash; Make sure to capitalize the schema name &ndash;&gt;-->
+                <!--<hibernate.dialect>org.hibernate.dialect.Oracle9iDialect</hibernate.dialect>-->
+                <!--&lt;!&ndash;<jdbc.groupId>com.oracle.jdbc</jdbc.groupId>&ndash;&gt;-->
+                <!--<jdbc.artifactId>ojdbc5</jdbc.artifactId>-->
+                <!--<jdbc.version>${oracle.version}</jdbc.version>-->
+                <!--<jdbc.driverClassName>oracle.jdbc.OracleDriver</jdbc.driverClassName>-->
+                <!--<jdbc.url><![CDATA[jdbc:oracle:thin:@${db.host}:${db.port}:${db.instance}]]></jdbc.url>-->
+                <!--<jdbc.username>system</jdbc.username>-->
+                <!--<jdbc.password>system</jdbc.password>-->
+            <!--</properties>-->
+        <!--</profile>-->
         <profile>
             <id>db2</id>
             <properties>
